@@ -7,7 +7,8 @@ import Products from "./components/Products";
 import Gallery from "./components/Gallery";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import "./App.css";
+import './App.css'
+
 
 const App: React.FC = () => {
   return (
