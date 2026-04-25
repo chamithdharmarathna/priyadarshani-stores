@@ -40,6 +40,12 @@ body {
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 a  { text-decoration: none; color: inherit; }
 ul { list-style: none; }
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
 
 /* ─── Container ─────────────────────────────────────────────────────────────── */
 .container {
@@ -60,6 +66,7 @@ ul { list-style: none; }
   cursor: pointer;
   transition: all 0.25s ease;
   border: 2px solid transparent;
+  background: none;
 }
 .btn--primary {
   background: var(--orange);
@@ -100,114 +107,16 @@ ul { list-style: none; }
   background: var(--orange);
   border-radius: 4px;
   margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
 }
 .section__divider--center { margin-inline: auto; }
-
-/* ─── Header ────────────────────────────────────────────────────────────────── */
-.header {
-  position: fixed;
-  top: 0;
-  inset-inline: 0;
-  z-index: 1000;
-  background: var(--white);
-  transition: box-shadow 0.3s;
-}
-.header--scrolled {
-  box-shadow: 0 2px 20px rgba(232,115,12,0.15);
-}
-.header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 70px;
-  gap: 16px;
-}
-
-/* Logo */
-.logo {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  text-decoration: none;
-}
-.logo__cart  { font-size: 1.2rem; }
-.logo__name  { font-family: var(--font-display); font-size: 1.35rem; color: var(--charcoal); font-weight: 700; }
-.logo__accent { color: var(--orange); }
-.logo__stores {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
-  font-weight: 700;
-  color: var(--orange);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-left: 2px;
-  align-self: flex-end;
-  margin-bottom: 3px;
-}
-.logo--footer .logo__name  { color: var(--white); }
-.logo--footer .logo__stores { color: var(--orange-light); }
-
-/* Desktop Nav */
-.nav--desktop {
-  display: flex;
-  gap: 4px;
-}
-.nav__link {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--charcoal);
-  padding: 6px 12px;
-  border-radius: 6px;
-  transition: color 0.2s, background 0.2s;
-}
-.nav__link:hover {
-  color: var(--orange);
-  background: var(--orange-pale);
-}
-
-/* Hamburger */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 36px;
-  height: 36px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
-}
-.hamburger span {
-  display: block;
-  width: 100%;
-  height: 2.5px;
-  background: var(--charcoal);
-  border-radius: 4px;
-  transition: transform 0.3s, opacity 0.3s;
-}
-.hamburger--open span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
-.hamburger--open span:nth-child(2) { opacity: 0; }
-.hamburger--open span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
-
-/* Mobile Nav */
-.nav--mobile {
-  display: none;
-  flex-direction: column;
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  padding: 8px 0 16px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease;
-}
-.nav--mobile-open {
-  max-height: 400px;
-}
-.nav__link--mobile {
-  padding: 12px 24px;
-  font-size: 1rem;
-}
 
 /* ─── Hero ──────────────────────────────────────────────────────────────────── */
 .hero {
@@ -592,9 +501,14 @@ ul { list-style: none; }
   gap: 8px;
 }
 .footer__link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
   font-size: 0.88rem;
   color: rgba(255,255,255,0.65);
   transition: color 0.2s;
+  padding: 0;
 }
 .footer__link:hover { color: var(--orange); }
 .footer__link--email { font-size: 0.82rem; word-break: break-all; }
@@ -611,10 +525,6 @@ ul { list-style: none; }
 
 /* ─── Responsive ────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
-  .nav--desktop { display: none; }
-  .hamburger    { display: flex; }
-  .nav--mobile  { display: flex; }
-
   .hero__inner              { grid-template-columns: 1fr; text-align: center; padding-block: 60px; }
   .hero__sub                { margin-inline: auto; }
   .hero__cta-row            { justify-content: center; }
