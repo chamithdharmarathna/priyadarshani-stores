@@ -199,13 +199,6 @@ const Footer = () => {
     }
   `;
 
-  const footerBottomStyles = css`
-    text-align: center;
-    padding: 30px 0 20px 0;
-    font-size: 0.85rem;
-    opacity: 0.5;
-    font-family: 'Inter', sans-serif;
-  `;
 
   const handleNavClick = (href: string) => {
     scrollToSection(href);
