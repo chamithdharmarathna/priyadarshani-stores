@@ -102,7 +102,7 @@ const Header = () => {
   `;
 
   const navLinkStyles = (isActive: boolean) => css`
-    font-size: 0.88rem;
+    font-size: 1.2rem;
     font-weight: ${isActive ? 700 : 500};
     color: ${isActive ? 'white' : 'black'};
     background: none;
@@ -165,7 +165,7 @@ const Header = () => {
 
   const mobileNavLinkStyles = (isActive: boolean) => css`
     padding: 12px 24px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: ${isActive ? 'white' : 'black'};
     background: none;
     border: none;
